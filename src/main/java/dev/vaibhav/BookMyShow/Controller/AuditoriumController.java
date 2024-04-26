@@ -1,12 +1,11 @@
 package dev.vaibhav.BookMyShow.Controller;
 
 import dev.vaibhav.BookMyShow.DataTransferObject.AuditoriumDTO;
+import dev.vaibhav.BookMyShow.Model.Auditorium;
 import dev.vaibhav.BookMyShow.Service.AuditoriumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AuditoriumController {
@@ -23,8 +22,11 @@ public class AuditoriumController {
                             auditoriumDTO.getTheatreId()
                     )
             );
-        //                            auditoriumDTO.getSeats(),
-//                            auditoriumDTO.getShows(),
-//                            auditoriumDTO.getAuditoriumFeatures(),
+    }
+
+    @GetMapping("/auditorium/{id}")
+    public ResponseEntity getAuditorium(@PathVariable("id") int audiId){
+        Auditorium auditorium = auditoriumService.getAuditorium(audiId);
+        return ResponseEntity.ok(auditorium);
     }
 }

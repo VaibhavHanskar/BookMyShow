@@ -19,11 +19,11 @@ public class CityController {
         return ResponseEntity.ok(city);
     }
 
-    @GetMapping("/city/{id}")
-    public ResponseEntity getCityById(@PathVariable("id") int cityId){
-        City city = cityService.getCityById(cityId);
-        return ResponseEntity.ok(city);
-    }
+//    @GetMapping("/city/{id}")
+//    public ResponseEntity getCityById(@PathVariable("id") int cityId){
+//        City city = cityService.getCityById(cityId);
+//        return ResponseEntity.ok(city);
+//    }
 
     @PostMapping("/city")
     public ResponseEntity createCity(@RequestBody CityRequestDTO cityRequestDto){

@@ -36,4 +36,9 @@ public class AuditoriumService {
         theatreService.saveTheatre(theatre);
         return savedAuditorium;
     }
+
+    public Auditorium getAuditorium(int audiId){
+        Auditorium auditorium = auditoriumRepository.findById(audiId).get();
+        return auditorium;
+    }
 }
