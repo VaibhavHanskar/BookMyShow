@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
+@Table(name = "Payment")
 public class Payment extends BaseClass{
     private LocalDateTime paymentTime;
     private double amount;

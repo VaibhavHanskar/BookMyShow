@@ -10,6 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Table(name = "Auditorium")
 public class Auditorium extends BaseClass{
     private String name;
     private int capacity;

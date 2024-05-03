@@ -11,7 +11,9 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Table(name = "Movie")
 public class Movie extends BaseClass {
+
     private String name;
     private String description;
     @ManyToMany
@@ -19,4 +21,13 @@ public class Movie extends BaseClass {
     @ElementCollection
     @Enumerated(EnumType.STRING)
     private List<MovieFeatures> movieFeatures;
+    public Movie(){
+
+    }
+    public Movie(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
 }
+

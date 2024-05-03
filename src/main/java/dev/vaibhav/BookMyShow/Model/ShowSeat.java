@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "ShowSeat")
 public class ShowSeat extends BaseClass{
     private double price;
     @ManyToOne
@@ -16,4 +17,14 @@ public class ShowSeat extends BaseClass{
     private Seat seat;
     @Enumerated(EnumType.STRING)
     private ShowSeatStatus showSeatStatus;
+
+    public ShowSeat() {
+    }
+
+    public ShowSeat(double price, Show show, Seat seat, ShowSeatStatus showSeatStatus) {
+        this.price = price;
+        this.show = show;
+        this.seat = seat;
+        this.showSeatStatus = showSeatStatus;
+    }
 }

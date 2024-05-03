@@ -34,6 +34,6 @@ public class TheatreService {
         return theatreRepository.save(theatre);
     }
     public Theatre getTheatreById(int theatreId){
-        return theatreRepository.findTheatreById(theatreId);
+        return theatreRepository.findById(theatreId).get();
     }
 }

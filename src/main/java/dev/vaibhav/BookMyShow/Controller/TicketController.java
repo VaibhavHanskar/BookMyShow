@@ -20,7 +20,7 @@ public class TicketController {
 
     @PostMapping("/ticket")
     public ResponseEntity bookTicket(@RequestBody BookTicketRequestDTO ticketRequestDto){
-        List<Integer> showSeatIds  = ticketRequestDto.getShowSeaIds();
+        List<Integer> showSeatIds  = ticketRequestDto.getShowSeatIds();
         int userId = ticketRequestDto.getUserId();
         if(userId == 0 || showSeatIds.size() == 0 || showSeatIds == null){
             throw new TicketNotBookedException("Ticket not booked");

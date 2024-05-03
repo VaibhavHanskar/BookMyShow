@@ -3,9 +3,10 @@ package dev.vaibhav.BookMyShow.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Table(name = "TheatreShow")
 public class Show extends BaseClass{
     private LocalDateTime startTime;
     private LocalDateTime endTime;
